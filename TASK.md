@@ -1,5 +1,5 @@
 > ## sep-19-2022
->1. write a blog all feautures introduced by javascript 2009 t0 2022.
+>1. write a blog all feautures introduced by javascript 2009 to 2022.
 > 2. chrome dev-tool vs firebox dev-tool.
    
 
