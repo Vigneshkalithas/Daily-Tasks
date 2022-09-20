@@ -1,0 +1,10 @@
+19-sept-2022 task.
+
+1.write a blog all feautures introduced by javascript 2009 t0 2022.
+2.chrome dev-tool vs firebox dev-tool.
+
+20-sept-2023 task 
+1.should study BINARY TREE datastrucutre.
+2.CRUD operation BINARY TREE 
+3.Sorting in BINARY TREE.
+4.DFS AND BFS in BINARY TREE
