@@ -2,6 +2,7 @@
 >1. write a blog all feautures introduced by javascript 2009 to 2022.
 > 2. chrome dev-tool vs firebox dev-tool.
    
+---
 
 > ## sep-20-2022 
 > 1. should study **BINARY TREE** datastrucutre.
