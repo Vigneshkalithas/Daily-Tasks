@@ -9,6 +9,7 @@
 >2. CRUD operation **BINARY TREE**.
 >3. Sorting in **BINARY TREE**.
 >4. DFS AND BFS in **BINARY TREE**
+>5. Types os **BINARY TREE**
 
 ---
 >## sep-21-2022
