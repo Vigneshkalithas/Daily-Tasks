@@ -9,3 +9,7 @@
 >2. CRUD operation **BINARY TREE**.
 >3. Sorting in **BINARY TREE**.
 >4. DFS AND BFS in **BINARY TREE**
+
+---
+>## sep-21-2022
+>1. Types of selectors with example
