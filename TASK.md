@@ -5,7 +5,7 @@
 ---
 
 > ## sep-20-2022 
-> 1. should study **BINARY TREE** datastrucutre.
+> 1. what is **BINARY TREE** datastrucutre.
 >2. CRUD operation **BINARY TREE**.
 >3. Sorting in **BINARY TREE**.
 >4. DFS AND BFS in **BINARY TREE**
