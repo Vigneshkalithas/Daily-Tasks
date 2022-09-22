@@ -475,7 +475,7 @@ a[target="_blank"] {
 ### CSS [attribute~="value"] Selector
 1. The `[attribute~="value"]` selector is used to select elements with an attribute value containing a specified word.
 
-2. The following example selects all elements with a title attribute that contains a space-separated list of words, one of which is "flower"
+**2**. The following example selects all elements with a title attribute that contains a space-separated list of words, one of which is "flower"
 
 ```css
 [title~="flower"] {
