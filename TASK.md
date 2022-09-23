@@ -19,3 +19,10 @@
 
 >1. Sample FIGMA Design
 >2. write method like map in own Prototype
+
+
+## SEP-23-2022
+
+>1. Full details about NaN
+>2. Full details about ParseInt
+>3. How to copy array value except spread.
