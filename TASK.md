@@ -23,6 +23,6 @@
 
 ## SEP-23-2022
 
->1. Full details about **NaN**
+>1. Full details about **NaN** *`isNaN vs Number.IsNaN`*
 >2. Full details about **ParseInt**
 >3. How to **copy array** value except `spread`.

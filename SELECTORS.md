@@ -106,7 +106,7 @@ p {
 It will be better to group the selectors, to minimize the code. 
 ```css
 h1, h2, p { 
-  text-align: center; 
+  text-align: **center**; 
   color: red; 
 }
 ``` 
