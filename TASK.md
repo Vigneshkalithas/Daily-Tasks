@@ -26,3 +26,16 @@
 >1. Full details about **NaN** *`isNaN vs Number.IsNaN`*
 >2. Full details about **ParseInt**
 >3. How to **copy array** value except `spread`.
+
+
+## SEP-26-2022
+>1. Function Composition.
+>2. paradigm - own-interest
+
+## SEP-27-2022
+> Raghav sir leave.
+
+## SEP-28-2022
+>1. Impretaive and Declarative Programing
+>2. pipeline function for currying functions examples
+>3. create pipeline like R.pipe (Ramda)
