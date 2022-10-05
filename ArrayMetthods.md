@@ -494,7 +494,7 @@ console.log(priceList)
 - Here, we can see that even though 1000 is greater than 50 numerically, it comes at the beginning of the sorted list. It is because "1" < "5".
 
 
-# array.fill()
+## array.fill()
 
 - The fill() method returns an array by filling all elements with a specified value.
 
@@ -591,7 +591,7 @@ console.log(rank);  // [ 8, 9, 15, 15 ]
 
 ```
 
-# array.lastIndexOf()
+## array.lastIndexOf()
 - The lastIndexOf() method returns the index of the last occurrence of a specified element in the array.
 
 *syntax*
@@ -668,7 +668,7 @@ console.log(lastIndex);
 // output : 0 
 ```
 
-# array.indexOf()
+## array.indexOf()
 
 
 - The indexOf() method returns the first index of occurance of an array element, or -1 if it is not found.
@@ -717,7 +717,7 @@ console.log(index4); // -1
 
 ```
 
-# Array constructor
+## Array constructor
 
 - The constructor property returns the constructor function for the array.
 
@@ -735,7 +735,7 @@ console.log(constructor)
 // [Function: Array]
 ```
 
-#  Array copyWithin()
+## Array copyWithin()
 - The copyWithin() method copies array elements from one position to another in the given array.
 
 *syntax*
@@ -805,7 +805,7 @@ console.log(evenNumbers);
 
 
 
-# Array entries()
+## Array entries()
 
 - The entries() method returns a new Array Iterator object containing key/value pairs for each array index.
 
@@ -855,9 +855,9 @@ for (let entry of iterator) {
 
 ```
 
-# array.every()
+## array.every()
 
--The JavaScript Array every() method checks if all the array elements pass the given test function.
+- The JavaScript Array every() method checks if all the array elements pass the given test function.
 
 *syntax*
 ```js
@@ -920,7 +920,7 @@ console.log(numbers.some(isEven));
 ```
 
 
-# array.filter()
+## array.filter()
 
 - The filter() method returns a new array with all elements that pass the test defined by the given function.
 
@@ -1002,7 +1002,7 @@ console.log(newLanguages); // [ 'JavaScript', 'Python', 'PHP' ]
 [ 'JavaScript', 'Python', 'PHP' ]
 ```
 
-# array.find()
+## array.find()
 - The find() method returns the value of the first array element that satisfies the provided test function.
 
 ```js
@@ -1027,7 +1027,7 @@ console.log(evenNumber);
 ```
 
 
-# array.findIndex()
+## array.findIndex()
 
 - The findIndex() method returns the index of the first array element that satisfies the provided test function or else returns -1.
   
@@ -1083,3 +1083,753 @@ console.log(firstEven); // 2
 2
 ```
 - The method returns 2 which is the index of the first even number in numbers i.e. 8.
+
+## array.includes()
+- The includes() method checks if an array contains a specified element or not.
+
+*syntax*
+```js
+arr.includes(valueToFind, fromIndex)
+```
+
+```js
+// defining an array
+let languages = ["JavaScript", "Java", "C"];
+
+// checking whether the array contains 'Java'
+let check = languages.includes("Java");
+
+console.log(check); 
+
+// Output: true
+```
+
+
+#### Parameters
+- searchValue- The value to search for.
+- fromIndex (optional) - The position in the array at which to begin the search. By default, it is 0.
+  
+- For negative values, the search starts from array.length + fromIndex (Counting from backward). For example, -1 represents the last element
+
+
+#### Return Value
+
+- true if searchValue is found anywhere within the array
+- false if searchValue is not found anywhere within the array
+
+
+```js
+
+let languages = ["JavaScript", "Java", "C", "C++"];
+
+// checking whether the array contains 'C'
+let check1 = languages.includes("C");
+
+console.log(check1); // true
+
+// checking whether the array contains 'Ruby'
+let check2 = languages.includes("Ruby");
+
+console.log(check2); // false
+```
+
+
+```js
+let languages = ["JavaScript", "Java", "C", "Python"];
+
+// checking whether the array contains 'Python'
+let check1 = languages.includes("Python");
+
+console.log(check1); // true
+
+// checking whether the array contains 'python'
+let check2 = languages.includes("python");
+
+console.log(check2); // false
+```
+
+
+
+## reduceRight()
+
+- The reduceRight() method reduces the array to a single value by executing a callback function on two values of the array (from right to left).
+```js
+let numbers = [1, 2, 3, 4];
+
+// function that adds last two values of the numbers array
+function sum_reducer(accumulator, currentValue) {
+  return accumulator + currentValue;
+}
+
+// returns a single value after reducing the numbers array
+let sum = numbers.reduceRight(sum_reducer);
+
+console.log(sum);
+
+// Output: 10
+```
+
+*Syntax*
+```ja
+arr.reduceRight(callback(accumulator, currentValue), initialValue)
+```
+
+#### Parameters
+
+- `callback` - The function to execute on each array element. It takes in:
+  - `accumulator` - It accumulates the callback's return values. It is initialValue for the first call if supplied.
+  - `currentValue` - The current element being passed from the array.
+
+- `initialValue`` (optional) - A value that will be passed to callback() on the first call. If not provided, the last element acts as the accumulator on the first call and callback() won't execute on it.
+- 
+>Note: Calling reduceRight() on an empty array without initialValue will throw TypeError.
+
+#### Return Value
+- Returns the value resulting after reducing the array.
+
+
+>- reduceRight() executes the given function for each value from right to left.
+>- reduceRight() does not change the original array.
+>- It is almost always safer to provide initialValue.
+
+
+```js
+
+let numbers = [1, 2, 3, 4, 5, 6];
+
+// function that adds last two values of the numbers array
+function sum_reducer(accumulator, currentValue) {
+  return accumulator + currentValue;
+}
+
+// returns a single value after reducing the numbers array
+let sum = numbers.reduceRight(sum_reducer);
+
+console.log(sum);
+//21
+```
+
+
+```js
+let expense = [50, 300, 20, 100, 1800];
+
+// function that returns sum of two values
+function add(accumulator, currentValue) {
+  return accumulator + currentValue;
+}
+
+// adds 0 with last value of expense (i.e 1800)
+// and executes the callback add()
+let result = expense.reduceRight(add, 0);
+
+console.log(result);
+// 2270
+```
+
+
+## reduce()
+- The reduce() method executes a reducer function on each element of the array and returns a single output value.
+
+```js
+const message = ["JavaScript ", "is ", "fun."];
+
+// function to join each string elements
+function joinStrings(accumulator, currentValue) {
+  return accumulator + currentValue;
+}
+
+// reduce join each element of the string
+let joinedString = message.reduce(joinStrings);
+console.log(joinedString);
+
+// Output: JavaScript is fun.
+```
+
+*Syntax*
+```js
+arr.reduce(callback(accumulator, currentValue), initialValue)
+```
+
+#### Parameters
+
+- `callback` - The function to execute on each array element (except the first element if no `initialValue` is provided). It takes in
+  - accumulator - It accumulates the callback's return values.
+
+  - currentValue - The current element being passed from the array.
+  
+- initialValue (optional) - A value that will be passed to callback() on first call. If not provided, the first element acts as the accumulator on the first call and callback() won't execute on it.
+ 
+>- Note: Calling reduce() on an empty array without initialValue will throw TypeError.
+
+#### Return Value
+- Returns the single value resulting after reducing the array.
+
+
+>- reduce() executes the given function for each value from left to right.
+>- reduce() does not change the original array.
+>- It is almost always safer to provide initialValue.
+
+Sum of All Values of Array
+```js
+const numbers = [1, 2, 3, 4, 5, 6];
+
+function sum_reducer(accumulator, currentValue) {
+  return accumulator + currentValue;
+}
+
+let sum = numbers.reduce(sum_reducer);
+console.log(sum); // 21
+
+// using arrow function
+let summation = numbers.reduce(
+  (accumulator, currentValue) => accumulator + currentValue
+);
+console.log(summation); // 21
+//21
+//21
+
+```
+ Subtracting Numbers in Array
+```js
+const numbers = [1800, 50, 300, 20, 100];
+
+// subtract all numbers from first number
+// since 1st element is called as accumulator rather than currentValue
+// 1800 - 50 - 300 - 20 - 100
+let difference = numbers.reduce(
+  (accumulator, currentValue) => accumulator - currentValue
+);
+console.log(difference); // 1330
+
+const expenses = [1800, 2000, 3000, 5000, 500];
+const salary = 15000;
+
+// function that subtracts all array elements from given number
+// 15000 - 1800 - 2000 - 3000 - 5000 - 500
+let remaining = expenses.reduce(
+  (accumulator, currentValue) => accumulator - currentValue,
+  salary
+);
+console.log(remaining); // 2700
+
+//1330
+// 2700
+```
+
+## isArray()
+
+- The isArray() method checks whether the passed argument is an array or not.
+
+*syntax*
+```js
+Array.isArray(value)
+```
+- true if the passed value is Array
+- false if the passed value is not Array
+
+>Note: This method always returns false for TypedArray instances.
+
+
+```js
+let numbers = [1, 2, 3, 4];
+
+// checking whether numbers is an array or not
+console.log(Array.isArray(numbers));
+
+let text = "JavaScript";
+
+// checking whether text is an array or not
+console.log(Array.isArray(text));
+
+// Output:
+// true
+// false
+```
+
+```js
+let fruits = ["Apple", "Grapes", "Banana"];
+
+// checking whether fruits is an array or not
+console.log(Array.isArray(fruits));
+
+let text = "Apple";
+
+// checking whether text is an array or not
+console.log(Array.isArray(text));
+
+// true
+// false
+```
+
+
+## array.map()
+- The map() method creates a new array with the results of calling a function for every array element.
+
+*syntax*
+```js
+arr.map(callback(currentValue), thisArg)
+```
+#### Parameters
+
+- `callback` - The function called for every array element. Its return values are added to the new array. It takes in:
+  - `currentValue` - The current element being passed from the array.
+- `thisArg` (optional) - Value to use as this when executing callback. By default, it is undefined.
+
+#### Return
+- Returns a new array with elements as the return values from the callback function for each element.
+
+>- map() does not change the original array.
+>- map() executes callback once for each array element in order.
+>- map() does not execute callback for array elements without values.
+
+
+```js
+let numbers = [2, 4, 6, 8, 10];
+
+// function to return the square of a number
+function square(number) {
+  return number * number;
+}
+
+// apply square() function to each item of the numbers list
+let square_numbers = numbers.map(square);
+console.log(square_numbers);
+
+// Output: [ 4, 16, 36, 64, 100 ]
+```
+
+
+```js
+const employees = [
+    { name: "Adam", salary: 5000, bonus: 500, tax: 1000 },
+    { name: "Noah", salary: 8000, bonus: 1500, tax: 2500 },
+    { name: "Fabiano", salary: 1500, bonus: 500, tax: 200 },
+    { name: "Alireza", salary: 4500, bonus: 1000, tax: 900 },
+];
+
+// calculate the net amount to be given to the employees
+const calcAmt = (obj) => {
+    newObj = {};
+    newObj.name = obj.name;
+    newObj.netEarning = obj.salary + obj.bonus - obj.tax;
+    return newObj;
+};
+
+let newArr = employees.map(calcAmt);
+console.log(newArr);
+
+//output 
+// [
+//   { name: 'Adam', netEarning: 4500 },
+//   { name: 'Noah', netEarning: 7000 },
+//   { name: 'Fabiano', netEarning: 1800 },
+//   { name: 'Alireza', netEarning: 4600 }
+// ]
+
+```
+
+## array.forEach()
+
+- The forEach() method executes a provided function for each array element.
+*syntax*
+```js
+arr.forEach(callback(currentValue), thisArg)
+```
+
+```js
+let numbers = [1, 3, 4, 9, 8];
+
+// function to compute square of each number
+function computeSquare(element) {
+  console.log(element * element);
+}
+
+// compute square root of each element
+numbers.forEach(computeSquare);
+
+/* Output:
+1
+9 
+16
+81
+64
+*/
+```
+
+#### Parameters
+
+- `callback` - The function to execute on every array element. It takes in:
+  - `currentValue` - The current element being passed from the array.
+- `thisArg` (optional) - Value to use as this when executing callback. By default, it is undefined.
+
+
+## Return Value
+
+>- forEach() does not change the original array.
+>- forEach() executes callback once for each array element in order.
+>- forEach() does not execute callback for array elements without values.
+
+```js
+function printElements(element, index) {
+    console.log('Array Element ' + index + ': ' + element);
+}
+
+const prices = [1800, 2000, 3000, , 5000, 500, 8000];
+
+// forEach does not execute for elements without values
+// in this case, it skips the third element as it is empty
+prices.forEach(printElements);
+
+
+// Array Element 0: 1800
+// Array Element 1: 2000
+// Array Element 2: 3000
+// Array Element 4: 5000
+// Array Element 5: 500
+// Array Element 6: 8000
+
+```
+
+```js
+function Counter() {
+    this.count = 0;
+    this.sum = 0;
+    this.product = 1;
+}
+
+Counter.prototype.execute = function (array) {
+    array.forEach((entry) => {
+        this.sum += entry;
+        ++this.count;
+        this.product *= entry;
+    }, this)
+}
+
+const obj = new Counter();
+obj.execute([4, 1, , 45, 8]);
+
+console.log(obj.count); // 4
+
+console.log(obj.sum); // 58
+
+console.log(obj.product); // 1440
+
+// 4
+// 58
+// 1440
+
+```
+
+
+## array.keys()
+
+- The keys() method returns a new Array Iterator object that contains the keys for each element in the array.
+
+```js
+let alphabets = ["A", "B", "C"];
+
+// returns an Array Iterator object that contains the keys
+let iterator = alphabets.keys();
+
+// looping through the Iterator object
+for (let key of iterator) {
+  console.log(key);
+}
+
+// Output:
+// 0
+// 1
+// 2
+
+```
+*Syntax*
+```js
+arr.keys()
+```
+
+#### Parameters
+- The keys() method does not take any parameters.
+
+#### Return Value
+- Returns a new Array iterator object.
+- The keys() method does not:
+change the original array.
+ignore empty array elements.
+
+```js
+let languages = ["JavaScript", "Java", "C++", "Python"];
+
+// returns an Array Iterator Object that contains keys 
+let iterator = languages.keys();
+
+// looping through the iterator object
+for (let key of iterator) {
+  console.log(key);
+}
+// Output
+// 0
+// 1
+// 2
+// 3
+
+```
+
+
+## array.values()
+- The values() method returns a new Array Iterator object that contains the values for each index in the array.
+
+```js
+let languages = ["JavaScript", "Java", "C++"];
+
+// returns an Array Iterator object that contain values
+let iteratorObject = languages.values();
+
+// looping through iterator
+for (let value of iteratorObject) {
+  console.log(value);
+}
+
+// Output:
+// JavaScript
+// Java
+// C++
+
+```
+
+*Syntax*
+
+```js
+arr.values()
+```
+
+#### Parameters
+- The values() method does not take any parameters.
+
+#### Return Value
+- Returns a new Array iterator object.
+- The value() method does not change the original array.
+
+```js
+let languages = ["A", "B", "C"];
+
+// returns an iterator object that contain values of languages
+let iteratorObject = languages.values();
+
+// looping through iterator
+for (let value of iteratorObject) {
+  console.log(value);
+}
+
+// Output
+
+// A
+// B
+// C
+```
+
+## array.from()
+
+- The from() method creates a new array from any array-like or iterable object.
+
+```js
+// creating a new array from string
+let newArray = Array.from("abc");
+
+console.log(newArray);
+
+// Output:
+// [ 'a', 'b', 'c' ]
+```
+*Syntax*
+
+- Array.from(arraylike, mapFunc, thisArg)
+The from() method, being a static method, is called using the Array class name.
+
+#### Parameters
+
+- arraylike - Array-like or iterable object to convert to an array.
+- mapFunc (optional) - Map function that is called on each element.
+- thisArg (optional) - Value to use as this when executing mapFunc.
+
+- Array.from(obj, mapFunc, thisArg) is equivalent to Array.from(obj).map(mapFunc, thisArg).
+
+#### Return Value
+- Returns a new Array instance.
+- This method can create an array from:
+
+- array-like objects - The objects that have length property and have indexed elements like String.
+ 
+- Iterable objects like Map or Set.
+Example 1: from() Method with Array-like Objects
+
+```js
+// creating an array from a string 
+let array1= Array.from("JavaScript");
+
+console.log(array1); 
+// Output
+['J', 'a', 'v', 'a', 'S', 'c', 'r', 'i', 'p', 't']
+
+
+```
+
+## array.toLocaleString()
+- The toLocaleString() method returns a string representing the elements of the array in a particular locale.
+
+*syntax*
+```js
+arr.toLocaleString(locales, options)
+```
+  
+```js
+  let array1 = ["Nepal", 1];
+
+// returns string representation of array
+let stringFromArray = array1.toLocaleString();
+
+console.log(stringFromArray);
+
+// Output:
+// Nepal,1
+```
+#### Parameters
+- locales (optional) - A convention or formatting based on particular geography.
+- options (optional) - An object with configuration properties.
+
+#### Return Value
+- Returns a string representing the elements of the array.
+- This method converts each array element to Strings using their toLocaleString methods and separates them by a comma.
+
+
+```js
+let o = [1, "JavaScript", new Date()];
+
+// returns string representation of array
+let stringFromArray = array1.toLocaleString();
+
+console.log(stringFromArray);
+// Output
+
+1,JavaScript,5/9/2022, 2:11:22 PM
+```
+
+
+```js
+// defining an array 
+let prices = [689, 100, 4577, 56];
+
+// passing locales and options: 
+// using United States Dollar currency string format
+let resultingString = prices.toLocaleString("en-US", {
+  style: "currency",
+  currency: "USD",
+});
+
+console.log(resultingString); 
+
+// $689.00,$100.00,$4,577.00,$56.00
+
+```
+
+## array.flat()
+
+- The flat() method creates a new array by flattening a nested array up to the specified depth.
+
+```js
+// 3 nested arrays 
+let numbers = [1, 2, [3, 4, [5, 6, [7, 8]]]];
+
+// reducing nesting by flattening the array to depth 2 
+let flattenArray = numbers.flat(2);
+
+// new flatten array
+console.log(flattenArray);
+
+// Output:
+// [ 1, 2, 3, 4, 5, 6, [ 7, 8 ] ]
+
+```
+
+*Syntax*
+```js
+arr.flat(depth)
+```
+
+#### Parameters
+- The flat() method takes a single parameter:
+
+-depth - Integer specifying how deep a nested array should be flattened. Its default value is 1.
+#### Return Value
+- Returns a flatted array with the sub-array elements concatenated into it.
+
+- does not change the original array.
+removes empty slots in arrays.
+
+```js
+// Example 1: Using flat() Method
+// 3 nested array 
+let numbers = [1, 2, [3, 4, [5, 6, [7, 8]]]];
+
+// reducing nesting by flattening the array to depth 2 
+let flattenArray = numbers.flat(2);
+
+// new flatten array
+console.log(flattenArray);
+
+// Output
+
+// [ 1, 2, 3, 4, 5, 6, [ 7, 8 ] ]
+
+```
+
+## array.flatMap()
+
+- The flatMap() method first maps each element of an array using a mapping function, then flattens it into a new array.
+
+```js
+// defining an array
+let numbers = [1, 2, 3, 4, 5];
+
+// each element of the array is squared and later flattened
+const resultingArray = numbers.flatMap((x) => [x ** 2]);
+
+console.log(resultingArray);
+
+// Output:
+// [ 1, 4, 9, 16, 25 ]
+```
+*Syntax*
+```js
+arr.flatMap(callback(currentValue),thisArg)
+```
+#### Parameters
+- The flatMap() method can take two parameters:
+
+- callback - The function to initially execute on each array element. It takes in:
+
+- currentValue - The current element being passed from the array.
+  
+- thisArg (optional) - Value to use as this when executing callback.
+
+#### Return Value
+- Returns a new array after mapping every element using callback
+
+- The flatMap() method does not change the original array.
+
+- The flatMap() method is equivalent to array.map().flat().
+
+```js
+Example 1: Using flatMap() Method
+// defining an array
+let numbers = [1, 2, 3, 4, 5];
+
+// each element of the array is incremented by 1
+// and later the array is flattened
+let resultingArray = numbers.flatMap((element) => element + 1);
+
+console.log(resultingArray);
+// Output
+
+// [ 2, 3, 4, 5, 6 ]
+
+```
